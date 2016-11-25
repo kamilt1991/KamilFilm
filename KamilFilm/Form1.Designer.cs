@@ -32,6 +32,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tytuly_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lista_filmow_lv
@@ -63,16 +64,27 @@
             this.columnHeader3.Text = "Reżyser";
             this.columnHeader3.Width = 100;
             // 
+            // tytuly_lbl
+            // 
+            this.tytuly_lbl.AutoSize = true;
+            this.tytuly_lbl.Location = new System.Drawing.Point(535, 50);
+            this.tytuly_lbl.Name = "tytuly_lbl";
+            this.tytuly_lbl.Size = new System.Drawing.Size(92, 17);
+            this.tytuly_lbl.TabIndex = 1;
+            this.tytuly_lbl.Text = "Tytuły filmów:";
+            // 
             // KamilFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 574);
+            this.Controls.Add(this.tytuly_lbl);
             this.Controls.Add(this.lista_filmow_lv);
             this.Name = "KamilFilm";
             this.Text = "Kamil Film";
             this.Load += new System.EventHandler(this.KamilFilm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,6 +94,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label tytuly_lbl;
     }
 }
 

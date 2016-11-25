@@ -19,23 +19,25 @@ namespace KamilFilm
 
         private void KamilFilm_Load(object sender, EventArgs e)
         {
-            List<Film> ListaFilmow = new List<Film>();
-            ListaFilmow.Add(new Film("Pulp Fiction", 1994, "Tarantino"));
-            ListaFilmow.Add(new Film("Przelecz ocalonych", 2016, "Gibson"));
-            ListaFilmow.Add(new Film("Kill Bill", 2003, "Tarantino"));
-            ListaFilmow.Add(new Film("Ojciec Chrzestny", 1972, "Coppola"));
-            ListaFilmow.Add(new Film("Skazani na Shawshank", 1994, "Darabont"));
-            ListaFilmow.Add(new Film("Forrest Gump", 1994, "Zemeckis"));
-            ListaFilmow.Add(new Film("Gran Torino", 2008, "Eastwood"));
-            ListaFilmow.Add(new Film("Cinema Paradiso", 1988, "Tornatore"));
-            //ListaFilmow.Add(new Film("",, ""));
-            //ListaFilmow.RemoveAll(x=>x.Title=="Pulp Fiction");
-            foreach (Film film in ListaFilmow)
+            var filmy = new[]
             {
-                ListViewItem items = new ListViewItem(film.Title);
-                items.SubItems.Add(film.Year.ToString());
-                items.SubItems.Add(film.Director);
-                lista_filmow_lv.Items.Add(items);
+            new {FilmID=1, Title="Pulp Fiction", Year=1994,Director="Tarantino" },
+            new {FilmID=2, Title="Przelecz ocalonych", Year=2016,Director="Gibson" },
+            new {FilmID=3, Title="Kill Bill", Year=2003,Director= "Tarantino"},
+            new { FilmID = 4, Title = "Ojciec Chrzestny", Year =1972,Director= "Coppola"},
+            new { FilmID = 5, Title = "Skazani na Shawshank", Year= 1994, Director="Darabont"},
+            new { FilmID = 6, Title = "Forrest Gump", Year= 1994, Director="Zemeckis"},
+            new { FilmID = 7, Title = "Gran Torino", Year=2008, Director="Eastwood"},
+            new { FilmID = 8, Title = "Cinema Paradiso", Year=1988, Director="Tornatore"}
+            };
+
+
+            var movieTitles = from f in filmy
+                              select f.Title;
+            tytuly_lbl.Text += "\n";
+            foreach (string tytul in movieTitles)
+            {
+                tytuly_lbl.Text += tytul + "\n";
             }
         }
     }
